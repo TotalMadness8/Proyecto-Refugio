@@ -1,8 +1,8 @@
 #ifndef ADOPCION_H
 #define ADOPCION_H
-#include "headers/perro.h"
-#include "headers/gato.h"
-#include "headers/adoptante.h"
+#include "perro.h"
+#include "gato.h"
+#include "adoptante.h"
 #include <iostream>
 
 template <typename animal>

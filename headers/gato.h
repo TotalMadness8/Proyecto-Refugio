@@ -1,12 +1,14 @@
+#ifndef GATO_H
+#define GATO_H
 #include <iostream>
-#include "headers/animal.h"
+#include "animal.h"
 
 enum class Condicion {
     Exterior,
     Interior
 };
 
-class Gato : protected Animal {
+class Gato : public Animal {
     private:
     std::string pelaje;
     Condicion condicion;
@@ -14,3 +16,5 @@ class Gato : protected Animal {
 Gato(int ide, std::string nom, int age, bool adopt, EstadoDeSalud est, std::string pelaj, Condicion cond); 
     
 };
+
+#endif

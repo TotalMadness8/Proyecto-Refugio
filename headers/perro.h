@@ -1,6 +1,6 @@
 #ifndef PERRO_H
 #define PERRO_H
-#include "headers/animal.h"
+#include "animal.h"
 
 // enum para usar a modo de etiquerta
 enum class Tamanio {

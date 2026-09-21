@@ -20,4 +20,4 @@ class Adoptante {
     
 };
 
-#endif ADOPTANTE_H              //Esta linea y las 2 primeras evitan que el archivo sea incluido multiples veces por error
+#endif             //Esta linea y las 2 primeras evitan que el archivo sea incluido multiples veces por error
