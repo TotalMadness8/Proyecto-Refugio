@@ -1,28 +1,7 @@
-#include <iostream>
-#include <string>
+#include "headers/animal.h"
 
-enum class EstadoDeSalud
-{
-    Saludable,
-    EnRecuperacion,
-    Enfermo
-};
 
-class Animal
-{
-protected:
-    int id;
-    std::string nombre;
-    int edad;
-    bool adopcion = false;
-    EstadoDeSalud estado;
+Animal::Animal(int ide, std::string nom, int age, bool adopt, EstadoDeSalud est) 
+    : id(ide), nombre(nom), edad(age), adopcion(adopt), estado(est){
 
-    public:
-
-    Animal(int ide, std::string nom, bool adopt, EstadoDeSalud est) : id(ide), nombre(nom), adopcion(adopt), estado(est){
-        id = ide;
-        nombre = nom;
-        adopcion = adopt;
-        estado = est;
-    }
-};
+}
