@@ -17,6 +17,8 @@ class Perro : public Animal {
     public:
     Perro(int id, std::string nom, int age, bool adopt, EstadoDeSalud est, std::string raz, Tamanio tam);
         // constructor
+
+        void mostrarInfo() const override;
 };
 
 

@@ -2,7 +2,8 @@
 
 Adoptante::Adoptante() : id(0), nombre("Sin nombre"), contacto(""), vivienda(Tipodevivienda::Casa) {} // Constructor por defecto
 
-Adoptante::Adoptante(int ide, std::string nom, std::string phone, Tipodevivienda tipo) : id(ide), nombre(nom), contacto(phone), vivienda(tipo) {} // Constructor Parametrizado
+Adoptante::Adoptante(int ide, std::string nom, std::string phone, Tipodevivienda tipo) 
+        : id(ide), nombre(nom), contacto(phone), vivienda(tipo) {}                      // Constructor Parametrizado
 
 
 //Metodos
