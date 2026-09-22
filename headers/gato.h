@@ -13,7 +13,11 @@ class Gato : public Animal {
     std::string pelaje;
     Condicion condicion;
 
-Gato(int ide, std::string nom, int age, bool adopt, EstadoDeSalud est, std::string pelaj, Condicion cond); 
+    public:
+
+    Gato(int ide, std::string nom, int age, bool adopt, EstadoDeSalud est, std::string pelaj, Condicion cond); //Constructor
+
+    void mostrarInfo() const override;  //Heredado de Animal
     
 };
 
