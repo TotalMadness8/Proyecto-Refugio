@@ -1,23 +1,31 @@
-#ifndef ADOPCION_H
-#define ADOPCION_H
-#include "perro.h"
-#include "gato.h"
-#include "adoptante.h"
+#ifndef SOLICITUD_ADOPCION_H
+#define SOLICITUD_ADOPCION_H
 #include <iostream>
 
-template <typename animal>
+enum class EstadoSolicitud {
+    Pendiente,
+    Confirmada,
+    Cancelada,
+    Devuelta
+};
 
-class Solicitud {
+class SolicitudAdopcion{
     private:
-    Adoptante adopt;            // Atributos
-    animal anim;
-    
+    int id;
+    int idAdoptante;
+    int idAnimal;
+    EstadoSolicitud estado;
+
     public:
+    SolicitudAdopcion();
+    SolicitudAdopcion(int ide, int idadop, int idanim);
 
-    Solicitud(Adoptante& adopt, animal& anim);          // Constructor
-
-    
-
+    int getId() const;
+    int getIdAdoptante() const;
+    int getIdAnimal() const;
+    EstadoSolicitud getEstado() const;
+    void setEstado(EstadoSolicitud nuevo);
+    void mostrarInfo() const;
 };
 
 #endif // evita errores de multiples include
