@@ -1,4 +1,4 @@
-#include "headers/solicitudAdopcion.h"
+#include "solicitudAdopcion.h"
 
 SolicitudAdopcion::SolicitudAdopcion() : id(0), idAdoptante(0), idAnimal(0), estado(EstadoSolicitud::Pendiente) {}
 

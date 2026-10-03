@@ -1,4 +1,4 @@
-#include "headers/adoptante.h"
+#include "adoptante.h"
 
 Adoptante::Adoptante() : id(0), nombre("Sin nombre"), contacto(""), vivienda(Tipodevivienda::Casa) {} // Constructor por defecto
 

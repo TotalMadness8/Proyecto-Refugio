@@ -1,4 +1,4 @@
-#include "headers/animal.h"
+#include "animal.h"
 
 Animal::Animal() : id(0), nombre("Sin nombre"), edad(0), adopcion(false), estado(EstadoDeSalud::Saludable) {}           // Por defecto
 
