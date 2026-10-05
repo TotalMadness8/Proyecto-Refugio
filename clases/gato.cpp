@@ -12,3 +12,5 @@ void Gato::mostrarInfo() const {
     std::cout << " | Pelaje: " << pelaje
               << " | " << (condicion == Condicion::Interior ? "Interior" : "Exterior") << std::endl;        //Muestra la info especifica del gato
 }
+
+Animal* Gato::clonar() const { return new Gato(*this); }

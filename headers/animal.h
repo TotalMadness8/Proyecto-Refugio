@@ -34,7 +34,7 @@ protected:
     void setAdopcion(bool valor);
 
     virtual void mostrarInfo() const; // La re-definen perro y gato
-
+    virtual Animal* clonar() const;     //Es para la copia profunda, perro y gato la re-definen
 };
 
 #endif              //Evita errores de include multiples

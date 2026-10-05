@@ -11,3 +11,5 @@ void Perro::mostrarInfo() const {
     std::cout << " | Raza: " << raza
               << " | " << (size == Tamanio::Chico ? "Chico" : "Grande") << std::endl;        //Muestra la info especifica del perro
 }
+
+Animal* Perro::clonar() const { return new Perro(*this); }

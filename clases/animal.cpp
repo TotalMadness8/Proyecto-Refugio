@@ -25,5 +25,7 @@ void Animal::mostrarInfo() const {
     std::cout << "Nombre: " << nombre << " | ID: " << id << " | Edad: " << edad << " | Estado de adopcion "
          << (adopcion ? "Adoptado" : "Disponible") << " | Estado de salud: "                                            //Muestra toda la info del animal
          << (estado == EstadoDeSalud::Saludable ? "Saludable" : "Enfermo")
-         << std::endl;
+         << "\n";
 }
+
+Animal* Animal::clonar() const { return new Animal(*this); }
