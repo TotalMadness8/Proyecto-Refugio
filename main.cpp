@@ -32,7 +32,6 @@ int main(){
 
 
     refugio.confirmarSolicitud(s1);
-    refugio.confirmarSolicitud(s2);
 
     std::cout << "\n-- Todos --\n";      refugio.listarAnimales();
     std::cout << "\n-- Disponibles --\n"; refugio.listarDisponibles();

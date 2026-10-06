@@ -13,6 +13,7 @@ private:
     static int instancias;
 
     void agrandar() {                      // duplica la capacidad
+        int nuevaCap = cap * 2;
         T* nuevo = new T[nuevaCap];
         for (int i = 0; i < cant; i++) nuevo[i] = datos[i];
         delete[] datos;
