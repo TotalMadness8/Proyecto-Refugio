@@ -1,9 +1,12 @@
 #ifndef REFUGIO_H
 #define REFUGIO_H
 #include <iostream>
+#include <string>
 #include "animal.h"
 #include "adoptante.h"
 #include "solicitudAdopcion.h"
+#include "coleccion.h"
+#include "excepciones.h"
 
 
 class Refugio {
@@ -14,20 +17,13 @@ std::string nombre;
     int cantAnimales;
     int capAnimales;
 
-    Adoptante* adoptantes;           // array dinamico de objetos Adoptante
-    int cantAdoptantes;
-    int capAdoptantes;
-
-    SolicitudAdopcion* solicitudes;  // array dinamico de objetos SolicitudAdopcion
-    int cantSolicitudes;
-    int capSolicitudes;
+    Coleccion<Adoptante> adoptantes;
+    Coleccion<SolicitudAdopcion> solicitudes;
 
     int proximoIdSolicitud;          // los IDs de solicitud los genera el refugio
 
     // Metodos internos
     void agrandarAnimales();
-    void agrandarAdoptantes();
-    void agrandarSolicitudes();
     int indiceAnimal(int id) const;       // -1 si no existe
     int indiceAdoptante(int id) const;
     int indiceSolicitud(int id) const;
@@ -36,25 +32,28 @@ std::string nombre;
     Refugio();                                              // por defecto
     Refugio(const std::string& nom, int capacidadInicial);  // parametrizado
     Refugio(const Refugio& otro);                           // copia profunda
+    Refugio& operator=(const Refugio& otro);
     ~Refugio();                                             // libera todo
-    Refugio& operator=(const Refugio& otro) = delete;      
+    
+    Animal& operator()(int id) const;       //acceso por posicion
+    Animal& operator[](int pos) const;      //busca por ID
     
     // Animales
-    bool registrarAnimal(const Animal& a);   // guarda una COPIA propia (clonar)
+    void registrarAnimal(const Animal& a);
     void listarAnimales() const;             
     void listarDisponibles() const;
     Animal* buscarAnimal(int id) const;      // nullptr si no existe (no liberar este puntero)
 
     // Adoptantes
-    bool registrarAdoptante(const Adoptante& ad);
-    Adoptante* buscarAdoptante(int id) const;
+    void registrarAdoptante(const Adoptante& ad);
+    const Adoptante* buscarAdoptante(int id) const;
     void listarAdoptantes() const;
 
     // Solicitudes
-    int  crearSolicitud(int idAdoptante, int idAnimal);   // devuelve el ID o -1 si falla
-    bool confirmarSolicitud(int idSolicitud);
-    bool cancelarSolicitud(int idSolicitud);
-    bool devolverAnimal(int idAnimal);
+    int  crearSolicitud(int idAdoptante, int idAnimal);   // devuelve el ID de la nueva solicitud
+    void confirmarSolicitud(int idSolicitud);
+    void cancelarSolicitud(int idSolicitud);
+    void devolverAnimal(int idAnimal);
     void mostrarSolicitudes() const;
     void mostrarHistorial() const;
 

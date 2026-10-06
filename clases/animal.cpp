@@ -11,7 +11,6 @@ Animal::Animal(const Animal &otro)
 Animal::~Animal() {} // Destructor
 
 // Metodos
-
 int Animal::getId() const { return id; } // Devuelve ID
 
 std::string Animal::getNombre() const { return nombre; } // Devuelve Nombre
@@ -20,25 +19,20 @@ bool Animal::estaAdoptado() const { return adopcion; } // Devuelve estado de ado
 
 void Animal::setAdopcion(bool valor) { adopcion = valor; } // Cambia el estado de adopción
 
+//Operadores
+bool Animal::operator==(const Animal& otro) const { return id == otro.id; }
+
+bool Animal::operator!() const { return adopcion; }
+
 void Animal::mostrarInfo() const
 {
-    std::cout << "Nombre: " << nombre << " | ID: " << id << " | Edad: " << edad << " | Estado de adopcion "
-              << (adopcion ? "Adoptado" : "Disponible") << " | Estado de salud: "; // Muestra toda la info del animal
+    std::cout << "Nombre: " << nombre << " | ID: " << id << " | Edad: " << edad << " | Estado de adopcion: "
+              << (adopcion ? "Adoptado" : "Disponible") << " | Estado de salud: ";
 
     switch (estado)
     {
-    case EstadoDeSalud::Saludable:
-        std::cout << "Saludable" << "\n";
-        break;
-
-    case EstadoDeSalud::EnRecuperacion:
-        std::cout << "En Recuperacion" << "\n";
-        break;
-        
-    case EstadoDeSalud::Enfermo:
-        std::cout << "Enfermo" << "\n";
-        break;
+    case EstadoDeSalud::Saludable:      std::cout << "Saludable";       break;
+    case EstadoDeSalud::EnRecuperacion: std::cout << "En Recuperacion"; break;
+    case EstadoDeSalud::Enfermo:        std::cout << "Enfermo";         break;
     }
 }
-
-Animal *Animal::clonar() const { return new Animal(*this); }

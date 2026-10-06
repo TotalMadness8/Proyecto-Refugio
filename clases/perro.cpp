@@ -14,18 +14,11 @@ void Perro::mostrarInfo() const
 
     switch (size)
     {
-    case Tamanio::Chico:
-        std::cout << "Chico" << "\n";
-        break;
-
-    case Tamanio::Mediano:
-        std::cout << "Mediano" << "\n";
-        break;
-
-    case Tamanio::Grande:
-        std::cout << "Grande" << "\n";
-        break;
+    case Tamanio::Chico:    std::cout << "Chico";   break;
+    case Tamanio::Mediano:  std::cout << "Mediano"; break;
+    case Tamanio::Grande:   std::cout << "Grande";  break;
     }
+    std::cout << std::endl;
 }
 
 Animal *Perro::clonar() const { return new Perro(*this); }

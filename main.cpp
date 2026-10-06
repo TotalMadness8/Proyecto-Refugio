@@ -1,16 +1,21 @@
+#include <iostream>
+#include <string>
+#include <cstdlib>
 #include "adoptante.h"
 #include "animal.h"
-#include "refugio.h"
-#include "solicitudAdopcion.h"
 #include "gato.h"
 #include "perro.h"
-#include <iostream>
+#include "refugio.h"
+#include "solicitudAdopcion.h"
+#include "coleccion.h"
+#include "excepciones.h"
+
 
 
 int main(){
     Refugio refugio("Refugio Angelitos", 2);
 
-    Perro perro1(1,"Luna",8,true,EstadoDeSalud::Saludable,"Dalmata",Tamanio::Grande);
+    Perro perro1(1,"Luna",8,false,EstadoDeSalud::Saludable,"Dalmata",Tamanio::Grande);
     Gato  gato1(2,"Michi",3,false,EstadoDeSalud::Saludable,"Naranja",Condicion::Interior);
     Perro perro2(3,"Toby",2,false,EstadoDeSalud::EnRecuperacion,"Mestizo",Tamanio::Chico);
 

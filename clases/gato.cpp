@@ -6,9 +6,7 @@ Gato::Gato(int ide, std::string nom, int age, bool adopt, EstadoDeSalud est, std
 
 void Gato::mostrarInfo() const {
     std::cout << "[Gato] ";
-    
     Animal::mostrarInfo();                  //Muestra la info general del animal
-    
     std::cout << " | Pelaje: " << pelaje
               << " | " << (condicion == Condicion::Interior ? "Interior" : "Exterior") << std::endl;        //Muestra la info especifica del gato
 }

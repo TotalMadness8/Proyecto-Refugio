@@ -1,6 +1,7 @@
 #ifndef ANIMAL_H
 #define ANIMAL_H
 #include <iostream>
+#include <string>
 
 // enum para usar a modo de etiqueta
 enum class EstadoDeSalud
@@ -33,8 +34,13 @@ protected:
     bool estaAdoptado() const;
     void setAdopcion(bool valor);
 
-    virtual void mostrarInfo() const; // La re-definen perro y gato
-    virtual Animal* clonar() const;     //Es para la copia profunda, perro y gato la re-definen
+    //Operadores
+    bool operator==(const Animal& otro) const;
+    bool operator!() const;
+
+    //Metodos virtuales puros
+    virtual void mostrarInfo() const = 0;
+    virtual Animal* clonar() const = 0;     //Es para la copia profunda, perro y gato la re-definen
 };
 
 #endif              //Evita errores de include multiples
