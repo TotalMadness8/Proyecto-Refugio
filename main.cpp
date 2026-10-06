@@ -25,6 +25,7 @@ int main(){
     int s1 = refugio.crearSolicitud(1, 1);
     int s2 = refugio.crearSolicitud(1, 1);
 
+
     refugio.confirmarSolicitud(s1);
     refugio.confirmarSolicitud(s2);
 
@@ -32,6 +33,7 @@ int main(){
     std::cout << "\n-- Disponibles --\n"; refugio.listarDisponibles();
     std::cout << "\n-- Solicitudes --\n"; refugio.mostrarSolicitudes();
     std::cout << "\n-- Historial --\n"; refugio.mostrarHistorial();
+    std::cout << "\n-- Adoptantes --\n"; refugio.listarAdoptantes();
 
 
     return 0;

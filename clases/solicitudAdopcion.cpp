@@ -15,8 +15,27 @@ EstadoSolicitud SolicitudAdopcion::getEstado() const { return estado; }
 
 void SolicitudAdopcion::setEstado(EstadoSolicitud nuevo) { estado = nuevo; }
 
-void SolicitudAdopcion::mostrarInfo() const {
+void SolicitudAdopcion::mostrarInfo() const
+{
     std::cout << "Solicitud " << id << " | Adoptante " << idAdoptante
-              << " | Animal " << idAnimal << " | " 
-              << (estado == EstadoSolicitud::Pendiente ? "Pendiente" : "Devuelta")  << "\n";
+              << " | Animal " << idAnimal << " | ";
+
+    switch (estado)
+    {
+    case EstadoSolicitud::Pendiente:
+        std::cout << "Pendiente" << "\n";
+        break;
+
+    case EstadoSolicitud::Confirmada:
+        std::cout << "Confirmada" << "\n";
+        break;
+
+    case EstadoSolicitud::Cancelada:
+        std::cout << "Cancelada" << "\n";
+        break;
+
+    case EstadoSolicitud::Devuelta:
+        std::cout << "Devuelta" << "\n";
+        break;
+    }
 }

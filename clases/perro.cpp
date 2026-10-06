@@ -1,15 +1,31 @@
 #include "perro.h"
 
 Perro::Perro(int id, std::string nom, int age, bool adopt, EstadoDeSalud est, std::string raz, Tamanio tam)
-    : Animal(id, nom, age, adopt, est), raza(raz), size(tam) { }
+    : Animal(id, nom, age, adopt, est), raza(raz), size(tam) {}
 
-void Perro::mostrarInfo() const {
+void Perro::mostrarInfo() const
+{
     std::cout << "[Perro] ";
-    
-    Animal::mostrarInfo();                  //Muestra la info general del animal
-    
+
+    Animal::mostrarInfo(); // Muestra la info general del animal
+
     std::cout << " | Raza: " << raza
-              << " | " << (size == Tamanio::Chico ? "Chico" : "Grande") << std::endl;        //Muestra la info especifica del perro
+              << " | " << "Tamanio: "; // Muestra la info especifica del perro
+
+    switch (size)
+    {
+    case Tamanio::Chico:
+        std::cout << "Chico" << "\n";
+        break;
+
+    case Tamanio::Mediano:
+        std::cout << "Mediano" << "\n";
+        break;
+
+    case Tamanio::Grande:
+        std::cout << "Grande" << "\n";
+        break;
+    }
 }
 
-Animal* Perro::clonar() const { return new Perro(*this); }
+Animal *Perro::clonar() const { return new Perro(*this); }
