@@ -2,8 +2,9 @@
 
 SolicitudAdopcion::SolicitudAdopcion() : id(0), idAdoptante(0), idAnimal(0), estado(EstadoSolicitud::Pendiente) {}
 
-SolicitudAdopcion::SolicitudAdopcion(int ide, int idAdop, int idAnim)
-    : id(ide), idAdoptante(idAdop), idAnimal(idAnim), estado(EstadoSolicitud::Pendiente) {}
+SolicitudAdopcion::SolicitudAdopcion(int ide, int idAdop, int idAnim, std::string nomAnim, std::string nomAdop)
+    : id(ide), idAdoptante(idAdop), idAnimal(idAnim),
+         nombreAnimal(nomAnim), nombreAdoptante(nomAdop), estado(EstadoSolicitud::Pendiente) {}
 
 int SolicitudAdopcion::getId() const { return id; }
 
@@ -17,8 +18,8 @@ void SolicitudAdopcion::setEstado(EstadoSolicitud nuevo) { estado = nuevo; }
 
 void SolicitudAdopcion::mostrarInfo() const
 {
-    std::cout << "Solicitud " << id << " | Adoptante " << idAdoptante
-              << " | Animal " << idAnimal << " | ";
+    std::cout << "ID Solicitud: " << id << " | Adoptante: " << nombreAdoptante
+              << " | Animal: " << nombreAnimal << " | Estado de la solicitud: ";
 
     switch (estado)
     {

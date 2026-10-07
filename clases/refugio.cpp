@@ -6,7 +6,7 @@ Refugio::Refugio(const std::string& nom, int capacidadInicial)   // Parametrizad
     : nombre(nom), animales(nullptr), cantAnimales(0),
       capAnimales(capacidadInicial < 1 ? 1 : capacidadInicial),
       adoptantes(capacidadInicial), solicitudes(capacidadInicial),   // construyen sus Colecciones
-      proximoIdSolicitud(1)
+      proximoIdSolicitud(1), proximoIdAnimal(1)
 {
     animales = new Animal*[capAnimales];
 }
@@ -16,7 +16,7 @@ Refugio::Refugio(const Refugio& otro)
     : nombre(otro.nombre), animales(nullptr),
       cantAnimales(otro.cantAnimales), capAnimales(otro.capAnimales),
       adoptantes(otro.adoptantes), solicitudes(otro.solicitudes),
-      proximoIdSolicitud(otro.proximoIdSolicitud)
+      proximoIdSolicitud(otro.proximoIdSolicitud), proximoIdAnimal(otro.proximoIdAnimal)
 {
     animales = new Animal*[capAnimales];
     for (int i = 0; i < cantAnimales; i++)
@@ -45,6 +45,7 @@ Refugio& Refugio::operator=(const Refugio& otro)
     adoptantes = otro.adoptantes;
     solicitudes = otro.solicitudes;
     proximoIdSolicitud = otro.proximoIdSolicitud;
+    proximoIdAnimal = otro.proximoIdAnimal;
     return *this;
 }
 
@@ -103,14 +104,12 @@ Animal& Refugio::operator()(int id) const {
 
 // Animales
 
-void Refugio::registrarAnimal(const Animal& a) {
-    for (int i = 0; i < cantAnimales; i++)
-        if (*animales[i] == a)                     // usa Animal::operator== (compara por ID)
-            throw IdRepetidoException("Ya existe un animal con esa ID " + std::to_string(a.getId()));
-
+int Refugio::registrarAnimal(const Animal& a) {
     if (cantAnimales == capAnimales) agrandarAnimales();
-    animales[cantAnimales] = a.clonar();           // guardo una COPIA propia (clonar sabe si es Perro o Gato)
-    cantAnimales++;
+    Animal* copia = a.clonar();
+    copia->setId(proximoIdAnimal++);   // el refugio decide el ID
+    animales[cantAnimales++] = copia;
+    return copia->getId(); 
 }
 
 void Refugio::listarAnimales() const {
@@ -156,8 +155,9 @@ void Refugio::listarAdoptantes() const {
 // Solicitudes
 
 int Refugio::crearSolicitud(int idAdoptante, int idAnimal) {
-    if (indiceAdoptante(idAdoptante) == -1)
-        throw NoEncontradoException("No existe un adoptante con esa ID " + std::to_string(idAdoptante));
+
+    int iad = indiceAdoptante(idAdoptante);
+    if (iad == -1) throw NoEncontradoException("No existe un adoptante con esa ID " + std::to_string(idAdoptante));
 
     int ia = indiceAnimal(idAnimal);
     if (ia == -1)
@@ -166,7 +166,8 @@ int Refugio::crearSolicitud(int idAdoptante, int idAnimal) {
         throw AnimalNoDisponibleException("El animal " + std::to_string(idAnimal) + " ya fue adoptado");
 
     int nuevoId = proximoIdSolicitud++;
-    solicitudes.agregar(SolicitudAdopcion(nuevoId, idAdoptante, idAnimal));
+
+    solicitudes.agregar(SolicitudAdopcion(nuevoId, idAdoptante, idAnimal, animales[ia]->getNombre(), adoptantes[iad].getNombre()));
     return nuevoId;
 }
 

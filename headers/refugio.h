@@ -21,7 +21,7 @@ std::string nombre;
     Coleccion<SolicitudAdopcion> solicitudes;
 
     int proximoIdSolicitud;          // los IDs de solicitud los genera el refugio
-
+    int proximoIdAnimal;
     // Metodos internos
     void agrandarAnimales();
     int indiceAnimal(int id) const;       // -1 si no existe
@@ -39,7 +39,7 @@ std::string nombre;
     Animal& operator[](int pos) const;      //busca por ID
     
     // Animales
-    void registrarAnimal(const Animal& a);
+    int registrarAnimal(const Animal& a);
     void listarAnimales() const;             
     void listarDisponibles() const;
     Animal* buscarAnimal(int id) const;      // nullptr si no existe (no liberar este puntero)

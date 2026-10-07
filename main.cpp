@@ -15,14 +15,15 @@
 int main(){
     Refugio refugio("Refugio Angelitos", 2);
 
-    Perro perro1(1,"Luna",8,false,EstadoDeSalud::Saludable,"Dalmata",Tamanio::Grande);
-    Gato  gato1(2,"Michi",3,false,EstadoDeSalud::Saludable,"Naranja",Condicion::Interior);
-    Perro perro2(3,"Toby",2,false,EstadoDeSalud::EnRecuperacion,"Mestizo",Tamanio::Chico);
+    Perro perro1("Luna",8,false,EstadoDeSalud::Saludable,"Dalmata",Tamanio::Grande);
+    Gato  gato1("Michi",3,false,EstadoDeSalud::Saludable,"Naranja",Condicion::Interior);
+    Perro perro2("Toby",2,false,EstadoDeSalud::EnRecuperacion,"Mestizo",Tamanio::Chico);
 
     Adoptante adopt1(1,"Manuel","888",Tipodevivienda::Casa);
 
     refugio.registrarAnimal(perro1);
     refugio.registrarAnimal(gato1);
+    refugio.registrarAnimal(perro1);
     refugio.registrarAnimal(perro2); 
 
     refugio.registrarAdoptante(adopt1);

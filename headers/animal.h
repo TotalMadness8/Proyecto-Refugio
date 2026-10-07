@@ -23,7 +23,7 @@ protected:
     public:
 
     Animal();                                                                 // Constructor por defecto
-    Animal(int ide, std::string nom, int age, bool adopt, EstadoDeSalud est); // Constructor
+    Animal(std::string nom, int age, bool adopt, EstadoDeSalud est); // Constructor
     Animal(const Animal& otro);                                               // Constructor de copia
     virtual ~Animal();                                                        // Destructor virtual
 
@@ -33,6 +33,7 @@ protected:
     std::string getNombre() const;
     bool estaAdoptado() const;
     void setAdopcion(bool valor);
+    void setId(int nuevoId);
 
     //Operadores
     bool operator==(const Animal& otro) const;

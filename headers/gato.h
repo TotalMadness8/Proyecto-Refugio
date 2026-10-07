@@ -15,7 +15,7 @@ class Gato : public Animal {
 
     public:
 
-    Gato(int ide, std::string nom, int age, bool adopt, EstadoDeSalud est, std::string pelaj, Condicion cond); //Constructor
+    Gato(std::string nom, int age, bool adopt, EstadoDeSalud est, std::string pelaj, Condicion cond); //Constructor
 
     void mostrarInfo() const override;  //Heredado de Animal
     Animal* clonar() const override;

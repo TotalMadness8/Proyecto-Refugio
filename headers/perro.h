@@ -15,7 +15,7 @@ class Perro : public Animal {
     Tamanio size;
 
     public:
-    Perro(int id, std::string nom, int age, bool adopt, EstadoDeSalud est, std::string raz, Tamanio tam);   // constructor
+    Perro(std::string nom, int age, bool adopt, EstadoDeSalud est, std::string raz, Tamanio tam);   // constructor
 
     void mostrarInfo() const override;
     Animal* clonar() const override;

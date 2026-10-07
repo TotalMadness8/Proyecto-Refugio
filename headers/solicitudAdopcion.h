@@ -14,11 +14,13 @@ class SolicitudAdopcion{
     int id;
     int idAdoptante;
     int idAnimal;
+    std::string nombreAnimal;
+    std::string nombreAdoptante;
     EstadoSolicitud estado;
 
     public:
     SolicitudAdopcion();
-    SolicitudAdopcion(int ide, int idadop, int idanim);
+    SolicitudAdopcion(int ide, int idadop, int idanim, std::string nombreAnimal, std::string nombreAdoptante);
 
     int getId() const;
     int getIdAdoptante() const;
