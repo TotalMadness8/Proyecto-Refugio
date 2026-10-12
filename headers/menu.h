@@ -16,9 +16,13 @@ void registrarPerro(Refugio& r);
 
 void registrarGato(Refugio& r);
 
+void actualizarSalud(Refugio& r);
+
 void registrarAdoptante(Refugio& r);
 
 void buscarPorId(Refugio& r);
+
+void buscarPorIdAdop(Refugio& r);
 
 void verPorPosicion(Refugio& r);
 

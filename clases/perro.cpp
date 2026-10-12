@@ -5,12 +5,12 @@ Perro::Perro(std::string nom, int age, bool adopt, EstadoDeSalud est, std::strin
 
 void Perro::mostrarInfo() const
 {
-    std::cout << "[Perro] ";
+    std::cout << "\n--------------------------------------------------------------------------------------------------------------------\n [Perro] ";
 
     Animal::mostrarInfo(); // Muestra la info general del animal
 
     std::cout << " | Raza: " << raza
-              << " | " << "Tamanio: "; // Muestra la info especifica del perro
+              << "\n " << "Tamanio: "; // Muestra la info especifica del perro
 
     switch (size)
     {
@@ -18,7 +18,7 @@ void Perro::mostrarInfo() const
     case Tamanio::Mediano:  std::cout << "Mediano"; break;
     case Tamanio::Grande:   std::cout << "Grande";  break;
     }
-    std::cout << std::endl;
+    std::cout << "\n--------------------------------------------------------------------------------------------------------------------\n";
 }
 
 Animal *Perro::clonar() const { return new Perro(*this); }

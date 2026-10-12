@@ -5,10 +5,11 @@ Gato::Gato(std::string nom, int age, bool adopt, EstadoDeSalud est, std::string 
 
 
 void Gato::mostrarInfo() const {
-    std::cout << "[Gato] ";
+    std::cout << "\n--------------------------------------------------------------------------------------------------------------------\n [Gato] ";
     Animal::mostrarInfo();                  //Muestra la info general del animal
-    std::cout << " | Pelaje: " << pelaje
-              << " | " << (condicion == Condicion::Interior ? "Interior" : "Exterior") << std::endl;        //Muestra la info especifica del gato
+    std::cout << "\n Pelaje: " << pelaje
+              << " | Tipo: " << (condicion == Condicion::Interior ? "Interior" : "Exterior") <<
+               "\n--------------------------------------------------------------------------------------------------------------------\n";        //Muestra la info especifica del gato
 }
 
 Animal* Gato::clonar() const { return new Gato(*this); }

@@ -33,5 +33,10 @@ public:
     explicit OperacionInvalidaException(const std::string& msg) : RefugioException(msg) {}
 };
 
+//Se lanza cuando se intenta crear una solicitud identica a otra (mismo animal y adoptante)
+class SolicitudRepetidaException : public RefugioException {
+    public:
+        explicit SolicitudRepetidaException(const std::string& msg) : RefugioException(msg) {}
+};
 
 #endif

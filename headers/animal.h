@@ -30,10 +30,12 @@ protected:
     //Metodos
 
     int getId() const;
+    EstadoDeSalud getEstado() const;
     std::string getNombre() const;
     bool estaAdoptado() const;
     void setAdopcion(bool valor);
     void setId(int nuevoId);
+    void setSalud(EstadoDeSalud nuevoEstado);
 
     //Operadores
     bool operator==(const Animal& otro) const;

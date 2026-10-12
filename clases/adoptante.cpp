@@ -14,6 +14,8 @@ std::string Adoptante::getNombre() const { return nombre; } // Devuelve el nombr
 
 void Adoptante::mostrarInfo() const
 {
-    std::cout << "Nombre: " << nombre << " | ID: " << id << " | Contacto: " << contacto << " | Tipo de vivienda: "
-              << (vivienda == Tipodevivienda::Casa ? "Casa" : "Departamento") << std::endl;                             // Muestra toda la info del adoptante
+    std::cout << "\n--------------------------------------------------------------------------------------------------------------------\n";    
+    std::cout << " [Adoptante] Nombre: " << nombre << " | ID: " << id << " | Contacto: " << contacto << "\n Tipo de vivienda: "
+              << (vivienda == Tipodevivienda::Casa ? "Casa" : "Departamento") 
+              << "\n--------------------------------------------------------------------------------------------------------------------\n";                             // Muestra toda la info del adoptante
 }

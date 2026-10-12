@@ -15,11 +15,15 @@ int Animal::getId() const { return id; } // Devuelve ID
 
 std::string Animal::getNombre() const { return nombre; } // Devuelve Nombre del animal
 
+EstadoDeSalud Animal::getEstado() const { return estado; }
+
 bool Animal::estaAdoptado() const { return adopcion; } // Devuelve estado de adopción
 
 void Animal::setAdopcion(bool valor) { adopcion = valor; } // Cambia el estado de adopción
 
 void Animal::setId(int nuevoId) { id = nuevoId; }
+
+void Animal::setSalud(EstadoDeSalud nuevoEstado) { estado = nuevoEstado; }
 
 //Operadores
 bool Animal::operator==(const Animal& otro) const { return id == otro.id; }

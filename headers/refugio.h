@@ -55,6 +55,7 @@ std::string nombre;
     void cancelarSolicitud(int idSolicitud);
     void devolverAnimal(int idAnimal);
     void mostrarSolicitudes() const;
+    void mostrarSolicitudesPendientes() const;
     void mostrarHistorial() const;
 
     // Getters
