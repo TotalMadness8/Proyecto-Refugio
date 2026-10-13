@@ -215,27 +215,31 @@ DEVOLVER ANIMAL (id)
 
 ## 11. Diagramas de flujo
 
-Los diagramas están en la carpeta `docs/diagramas/`, en formato PNG:
+Los diagramas están en la carpeta `diagramas`, en formato PNG:
 
 | Archivo | Contenido |
 |---|---|
 | `00_menu_principal.png` | Menú principal (incluye la opción 0, Salir) |
 | `01_registrar_perro.png` | Opción 1: Registrar perro |
 | `02_registrar_gato.png` | Opción 2: Registrar gato |
-| `03_listar_animales.png` | Opción 3: Listar todos los animales |
-| `04_listar_disponibles.png` | Opción 4: Listar disponibles |
-| `05_registrar_adoptante.png` | Opción 5: Registrar adoptante |
-| `06_buscar_por_id.png` | Opción 6: Buscar por ID |
-| `07_crear_solicitud.png` | Opción 7: Crear solicitud |
-| `08_confirmar_solicitud.png` | Opción 8: Confirmar solicitud |
-| `09_cancelar_solicitud.png` | Opción 9: Cancelar solicitud |
-| `10_devolver_animal.png` | Opción 10: Devolver animal |
-| `11_mostrar_solicitudes.png` | Opción 11: Mostrar solicitudes |
-| `12_historial.png` | Opción 12: Historial |
-| `13_ver_por_posicion.png` | Opción 13: Ver por posición |
-| `14_instancias.png` | Opción 14: Ver instancias |
-| `15_proceso_adopcion.png` | Proceso de adopción (estados de una solicitud) |
-| `16_diagrama_clases.png` | Diagrama de clases |
+| `03_registrar_adoptante.png` | Opción 3: Registrar adoptante |
+| `04_listar_animales.png` | Opción 4: Listar todos los animales |
+| `05_listar_disponibles.png` | Opción 5: Listar disponibles |
+| `06_listar_adoptantes.png` | Opción 6: Listar adoptantes |
+| `07_buscar_animal.png` | Opción 7: Buscar animal por ID |
+| `08_buscar_adoptante.png` | Opción 8: Buscar adoptante por ID |
+| `09_actualizar_salud.png` | Opción 9: Actualizar salud |
+| `10_crear_solicitud.png` | Opción 10: Crear solicitud |
+| `11_listar_solicitudes.png` | Opción 11: Listar todas las solicitudes |
+| `12_solicitudes_pendientes.png` | Opción 12: Solicitudes pendientes |
+| `13_confirmar_solicitud.png` | Opción 13: Confirmar solicitud |
+| `14_cancelar_solicitud.png` | Opción 14: Cancelar solicitud |
+| `15_devolver_animal.png` | Opción 15: Devolver animal |
+| `16_historial.png` | Opción 16: Historial |
+| `17_ver_por_posicion.png` | Opción 17: Ver por posición |
+| `18_instancias.png` | Opción 18: Ver instancias |
+| `19_proceso_adopcion.png` | Proceso de adopción (estados de una solicitud) |
+| `20_diagrama_clases.png` | Diagrama de clases |
 
 ## 12. Casos de prueba
 
